@@ -65,19 +65,19 @@ This module implements and analyzes **7 portfolio optimization models**:
 
 ```
 SiraEdge_Optimisation/
-├── src/                          # Code source Python
-│   ├── data_utils.py            # Utilitaires de données et indicateurs
-│   ├── markowitz.py             # Optimisation Markowitz
-│   ├── risk_parity.py           # Parité de risque
-│   ├── monte_carlo.py           # Simulation Monte Carlo
-│   ├── black_litterman.py       # Modèle Black-Litterman
-│   ├── ml_predictor.py          # Prédicteur ML
-│   ├── hybrid_model.py          # Modèle hybride
-│   ├── custom_metrics_opt.py    # Métriques personnalisées
-│   ├── metrics_utils.py         # Calculs de métriques financières
-│   ├── walkforward_backtest.py  # Backtest walk-forward
-│   └── hyperparams.py           # Hyperparamètres centralisés
-├── figures/                      # Graphiques et visualisations
+├── src/                          # Python source code
+│   ├── data_utils.py            # Data utilities and indicators
+│   ├── markowitz.py             # Markowitz optimization
+│   ├── risk_parity.py           # Risk parity optimization
+│   ├── monte_carlo.py           # Monte Carlo simulation
+│   ├── black_litterman.py       # Black-Litterman model
+│   ├── ml_predictor.py          # ML predictor
+│   ├── hybrid_model.py          # Hybrid model
+│   ├── custom_metrics_opt.py    # Custom metrics optimization
+│   ├── metrics_utils.py         # Financial metrics calculations
+│   ├── walkforward_backtest.py  # Walk-forward backtesting
+│   └── hyperparams.py           # Centralized hyperparameters
+├── figures/                      # Charts and visualizations
 │   ├── markowitz_frontier.png
 │   ├── risk_parity_weights.png
 │   ├── monte_carlo_cloud.png
@@ -85,19 +85,21 @@ SiraEdge_Optimisation/
 │   ├── ml_coefficients.png
 │   ├── hybrid_weights.png
 │   └── custom_opt_weights.png
-├── rapport/                      # Sources LaTeX du rapport
-│   ├── rapport_siraedge_optimisation.tex
+├── rapport/                      # LaTeX report sources
+│   ├── rapport_siraedge_en.tex  # English report
+│   ├── rapport_siraedge_fr.tex  # French report
 │   ├── portfolio_summary_included.tex
 │   └── walkforward_results_simulated.tex
-├── README.md                     # Ce fichier
-├── requirements.txt              # Dépendances Python
-└── make_report.sh               # Script de génération automatique
+├── README.md                     # This file
+├── requirements.txt              # Python dependencies
+└── make_report.sh               # Automated generation script
 ```
 ## 🛠️ Installation & Setup
 
 ### Requirements
 - Python 3.8+
 - pip or conda
+- Git (for cloning)
 
 ### Installation
 
@@ -114,14 +116,14 @@ pip install -r requirements.txt
 
 3. **Verify installation**
 ```bash
-python -c "import pandas, numpy, matplotlib, yfinance; print('Installation réussie!')"
+python -c "import pandas, numpy, matplotlib, yfinance; print('Installation successful!')"
 ```
 
 ## 🚀 Usage
 
 ### 1. **Generate Figures**
 ```bash
-# Générer toutes les figures
+# Generate all figures and visualizations
 python src/data_utils.py
 python src/markowitz.py
 python src/risk_parity.py
@@ -141,24 +143,27 @@ chmod +x make_report.sh
 
 # Or manual compilation
 cd rapport
-tectonic rapport_siraedge_optimisation.tex
+# For English report
+tectonic rapport_siraedge_en.tex
+# For French report
+tectonic rapport_siraedge_fr.tex
 ```
 
 ### 3. **Interactive Usage**
 ```python
-# Usage exemple of the Risk Parity module
+# Example usage of the Risk Parity module
 import numpy as np
 from src.risk_parity import risk_parity_weights
 from src.data_utils import download_prices
 
-# collect prices 
+# Download asset prices
 prices = download_prices(["SPY", "QQQ", "GLD", "DBA"], "2020-01-01", "2023-12-31", mode="auto")
 rets = np.log(prices / prices.shift(1)).dropna()
 cov = (rets.cov().values) * 252
 
-# Calculate the Risk Parity weigth
+# Calculate Risk Parity weights
 weights = risk_parity_weights(cov)
-print("Poids optimaux:", weights)
+print("Optimal weights:", weights)
 ```
 
 ## 📈 Data & Assets
@@ -201,6 +206,22 @@ The module includes a robust walk-forward analysis:
 - **Effective diversification** – equivalent number of assets
 - **Average correlation** – portfolio cohesion
 
+## 📈 Performance Benchmarks
+
+### **Model Comparison**
+- **Markowitz**: Traditional mean-variance optimization
+- **Risk Parity**: Equal risk contribution approach
+- **Black-Litterman**: Institutional-grade equilibrium model
+- **ML Hybrid**: AI-enhanced optimization
+- **Custom Metrics**: Multi-objective solutions
+
+### **Backtesting Results**
+- **Period**: 2020-2023 (3+ years)
+- **Assets**: 8+ ETFs and commodities
+- **Rebalancing**: Monthly walk-forward
+- **Transaction Costs**: 5 basis points
+- **Risk Management**: Dynamic correlation analysis
+
 ## 🎓 Educational Purpose
 
 This project is designed to be **educational** and **accessible**:
@@ -210,6 +231,26 @@ This project is designed to be **educational** and **accessible**:
 - Simple analogies for complex ideas
 - Commented and documented code
 - End-to-end workflow from start to finish
+
+## 🚀 Key Features of Portfolio Optimization Module
+
+### **Advanced Optimization Algorithms**
+- **7 state-of-the-art models** for portfolio construction
+- **Risk management** with multiple approaches
+- **Machine learning integration** for return forecasting
+- **Custom metrics** for specialized objectives
+
+### **Professional-Grade Backtesting**
+- **Walk-forward analysis** with rolling windows
+- **Transaction costs** simulation (5 bps)
+- **Comprehensive metrics** (Sharpe, Sortino, Calmar, etc.)
+- **Performance attribution** and analysis
+
+### **Data Management & Visualization**
+- **Automatic data download** via yfinance
+- **Fallback mechanisms** for data failures
+- **Professional charts** and visualizations
+- **Export capabilities** for reports
 
 ## 🔧 Customization
 
@@ -228,7 +269,11 @@ This project is designed to be **educational** and **accessible**:
 ## 📚 Documentation
 
 ### LaTeX Report
-The full report (`rapport_siraedge_optimisation.pdf`) includes:
+The full reports are available in both French and English:
+- **English Report**: `rapport/pdf/rapport_siraedge_en.pdf`
+- **French Report**: `rapport/pdf/rapport_siraedge_fr.pdf`
+
+Both reports include:
 - Detailed theoretical explanations
 - Mathematical formulations
 - Comparative analyses
@@ -249,6 +294,26 @@ This module integrates directly into the SiraEdge platform to allow users to:
 3. Understand risk–return trade-offs
 4. Learn by doing, with immediate feedback (educational focus)
 
+## 🎯 Use Cases
+
+### **Academic & Research**
+- **Portfolio theory** studies and research
+- **Algorithm comparison** and validation
+- **Risk management** research
+- **Machine learning** in finance applications
+
+### **Professional Development**
+- **Quantitative finance** learning
+- **Portfolio management** skills development
+- **Risk analysis** training
+- **Financial modeling** practice
+
+### **Institutional Applications**
+- **Backtesting** new strategies
+- **Risk assessment** tools
+- **Performance analysis** frameworks
+- **Educational platforms** for teams
+
 > **Scope:** this module is intended for educational and comparative purposes only.  
 > It does not constitute investment advice or performance guarantees.
 
@@ -256,10 +321,28 @@ This module integrates directly into the SiraEdge platform to allow users to:
 
 This project is licensed under the MIT License. See the [`LICENSE`](LICENSE) file for details.
 
-## 📞 Contact
+## 📞 Contact & Support
 
 - **Author:** [Ismail Moudden](https://github.com/IsmailMoudden)
 - **GitHub Repository:** https://github.com/IsmailMoudden/siraedge-portfolio-optimization
 - **Issues & Support:** https://github.com/IsmailMoudden/siraedge-portfolio-optimization/issues
+- **Documentation:** [Contributing Guide](CONTRIBUTING.md) | [Changelog](CHANGELOG.md)
+
+## 🤝 Contributing
+
+We welcome contributions to improve the Portfolio Optimization Module! Please see our [Contributing Guide](CONTRIBUTING.md) for details on:
+
+- Code style and standards
+- Testing requirements
+- Pull request process
+- Issue reporting guidelines
+
+## 📊 Project Status
+
+- **Current Version:** 1.0.0
+- **Python Support:** 3.8+
+- **License:** MIT
+- **Status:** Active Development
+- **Last Updated:** January 2025
 
 **SiraEdge** – Making finance accessible, transparent, and innovative for everyone. 🚀
