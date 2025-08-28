@@ -66,7 +66,7 @@
 }
 
 % Figure path
-\graphicspath{{../figures/}{../../}}
+\graphicspath{{../../figures/}{../../}}
 
 \begin{document}
 
@@ -231,7 +231,7 @@ The \textbf{logarithmic returns} of a price \(P_t\) are defined by \(r_t = \ln(P
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.7\linewidth]{../../correlation_heatmap_generated.png}
+  \includegraphics[width=0.7\linewidth]{../../figures/correlation_heatmap_generated.png}
   \caption{Correlation map of daily returns (2020--2023). Each cell measures the co-variation between two assets (1 on the diagonal). Values close to extremes indicate strong correlation; values close to 0 indicate good diversification potential.}
   \label{fig:corr_external}
 \end{figure}
@@ -292,7 +292,7 @@ def optimize_markowitz(returns, target_return=None):
 \subsection{Results}
 \begin{figure}[h]
   \centering
-  \maybeincludegraphics[width=0.85\linewidth]{../figures/markowitz_frontier.png}
+  \maybeincludegraphics[width=0.85\linewidth]{../../figures/markowitz_frontier.png}
   \caption{Approximate efficient frontier (black line) in the annualized volatility (x-axis) -- annualized return (y-axis) plane. Blue points are random portfolios and the red star indicates the portfolio with the highest Sharpe ratio; higher and to the left is preferred.}
   \label{fig:markowitz_frontier}
 \end{figure}
@@ -330,7 +330,7 @@ For each asset \(i\), we want its risk contribution to be equal:
 where \(w_i\) is the weight, \(\sigma_i\) the volatility of asset \(i\), and \(\sigma_{\text{total}}\) the portfolio volatility.
 
 \textbf{Simple translation:} We want each asset to "carry" the same share of global risk. If an asset is very volatile (like a tech stock), we put less. If an asset is stable (like a government bond), we put more. The goal: that the portfolio is balanced in terms of risk, not in terms of invested amount.
-\noindent Formally, risk contribution is written \($$\text{RC}_i(w)=\frac{w_i (\Sigma w)_i}{\sqrt{w^\top \Sigma w}}$$\). The \emph{equal risk contribution} portfolio is obtained via \($\min_{w\in\Delta}\sum_i\big(\text{RC}_i(w)-\frac{1}{N}\big)^2$\), \(\Delta=\{w\ge 0,\, \mathbf{1}^\top w=1\}\). An alternative is \(\min_w \sum_{i,j} (w_i (\Sigma w)_i - w_j (\Sigma w)_j)^2\). The problem is not strictly convex everywhere but is well-conditioned for \(\Sigma\succ 0\); projected gradient, L-BFGS with projection or Augmented Lagrangian schemes converge robustly. Preconditioning by volatility (normalization of \(\Sigma\)) significantly improves numerical stability.
+\noindent Formally, risk contribution is written \(\text{RC}_i(w)=\frac{w_i (\Sigma w)_i}{\sqrt{w^\top \Sigma w}}\). The \emph{equal risk contribution} portfolio is obtained via \(\min_{w\in\Delta}\sum_i\big(\text{RC}_i(w)-\frac{1}{N}\big)^2\), \(\Delta=\{w\ge 0,\, \mathbf{1}^\top w=1\}\). An alternative is \(\min_w \sum_{i,j} (w_i (\Sigma w)_i - w_j (\Sigma w)_j)^2\). The problem is not strictly convex everywhere but is well-conditioned for \(\Sigma\succ 0\); projected gradient, L-BFGS with projection or Augmented Lagrangian schemes converge robustly. Preconditioning by volatility (normalization of \(\Sigma\)) significantly improves numerical stability.
 
 \subsection{Practical advantages}
 \begin{itemize}
@@ -349,7 +349,7 @@ def risk_parity_weights(covariance_matrix):
 \subsection{Results}
 \begin{figure}[h]
   \centering
-  \maybeincludegraphics[width=0.75\linewidth]{../figures/risk_parity_weights.png}
+  \maybeincludegraphics[width=0.75\linewidth]{../../figures/risk_parity_weights.png}
   \caption{Final weights of a risk parity portfolio. Less volatile and weakly correlated assets generally receive more weight; the sum of bars equals 100\%.}
   \label{fig:risk_parity_weights}
 \end{figure}
@@ -403,7 +403,7 @@ def generate_random_portfolios(returns, n_portfolios=10000):
 \end{lstlisting}
 \begin{figure}[h]
   \centering
-  \maybeincludegraphics[width=0.85\linewidth]{../figures/monte_carlo_cloud.png}
+  \maybeincludegraphics[width=0.85\linewidth]{../../figures/monte_carlo_cloud.png}
   \caption{Cloud of 10,000 randomly drawn portfolios. Each point represents an annualized (volatility, return) pair; the upper envelope materializes the efficient frontier.}
   \label{fig:monte_carlo_cloud}
 \end{figure}
@@ -462,7 +462,7 @@ def black_litterman_optimization(prior_returns, views, confidence):
 \end{lstlisting}
 \begin{figure}[h]
   \centering
-  \maybeincludegraphics[width=0.75\linewidth]{../figures/black_litterman_weights.png}
+  \maybeincludegraphics[width=0.75\linewidth]{../../figures/black_litterman_weights.png}
   \caption{Resulting weights after fusion of market prior and investor views (Black--Litterman). Deviations from the prior reflect the strength and confidence associated with views.}
   \label{fig:bl_weights}
 \end{figure}
@@ -536,14 +536,14 @@ python -m src.ml_training_report --mode auto --start 2020-01-01 --end 2023-12-31
 \noindent The script generates: \texttt{ml\_accuracy\_evolution.png}, \texttt{ml\_coefficients.png}, \texttt{ml\_training\_metrics.csv}, \texttt{ml\_predictions.csv}, \texttt{ml\_hyperparams.csv} in \texttt{figures/}.
 \begin{figure}[h]
   \centering
-  \maybeincludegraphics[width=0.75\linewidth]{../figures/ml_accuracy_evolution.png}
+  \maybeincludegraphics[width=0.75\linewidth]{../../figures/ml_accuracy_evolution.png}
   \caption{Chronological evolution of aggregated Ridge predictor performance: average \(R^2\) by date (top) and sign accuracy (bottom). The dotted line at 50\% represents chance.}
   \label{fig:ml_metrics}
 \end{figure}
 
 \begin{figure}[h]
   \centering
-  \maybeincludegraphics[width=0.75\linewidth]{../figures/ml_coefficients.png}
+  \maybeincludegraphics[width=0.75\linewidth]{../../figures/ml_coefficients.png}
   \caption{Average coefficients per feature on the last training window (averaged over assets). Signs and amplitudes inform about the directional contribution of signals (not investment weights).}
   \label{fig:ml_coeffs}
 \end{figure}
@@ -611,7 +611,7 @@ def hybrid_optimization(risk_parity_weights, ml_scores, alpha=0.2):
 \end{lstlisting}
 \begin{figure}[h]
   \centering
-  \maybeincludegraphics[width=0.75\linewidth]{../figures/hybrid_weights.png}
+  \maybeincludegraphics[width=0.75\linewidth]{../../figures/hybrid_weights.png}
   \caption{Weights of a hybrid portfolio: Risk Parity base adjusted by a tilt proportional to ML score. The tilt slightly increases or reduces weight according to the signal, while preserving base diversification.}
   \label{fig:hybrid_weights}
 \end{figure}
@@ -678,7 +678,7 @@ def custom_objective(weights, returns, alpha=0.4, beta=0.3, gamma=0.2, delta=0.1
 \end{lstlisting}
 \begin{figure}[h]
   \centering
-  \maybeincludegraphics[width=0.75\linewidth]{../figures/custom_opt_weights.png}
+  \maybeincludegraphics[width=0.75\linewidth]{../../figures/custom_opt_weights.png}
   \caption{Optimal weights when maximizing a composite function (Sharpe, stability, drawdown, turnover). Overweighted assets balance expected return and operational robustness.}
   \label{fig:custom_weights}
 \end{figure}
@@ -754,7 +754,7 @@ This section integrates figures and summary tables already generated and provide
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.9\linewidth]{../../cumulative_portfolios_generated.png}
+  \includegraphics[width=0.9\linewidth]{../../figures/cumulative_portfolios_generated.png}
   \caption{Cumulative growth of strategies between 2020 and 2023 (base 1). Allows comparison of trajectory and decline phases (drawdowns); the higher the curve, the better the performance over the period.}
   \label{fig:cum_external}
 \end{figure}
@@ -763,26 +763,26 @@ This section integrates figures and summary tables already generated and provide
   \centering
   \begin{subfigure}[b]{0.48\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{../../Markowitz_weights_generated.png}
+    \includegraphics[width=\linewidth]{../../figures/Markowitz_weights_generated.png}
     \caption{Markowitz}
   \end{subfigure}
   \hfill
   \begin{subfigure}[b]{0.48\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{../../RiskParity_weights_generated.png}
+    \includegraphics[width=\linewidth]{../../figures/RiskParity_weights_generated.png}
     \caption{Risk Parity}
   \end{subfigure}
   
   \vspace{0.5em}
   \begin{subfigure}[b]{0.48\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{ML../../Markowitz_weights_generated.png}
+    \includegraphics[width=\linewidth]{../../figures/MLMarkowitz_weights_generated.png}
     \caption{ML-Markowitz}
   \end{subfigure}
   \hfill
   \begin{subfigure}[b]{0.48\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{../../HybridRPML_weights_generated.png}
+    \includegraphics[width=\linewidth]{../../figures/HybridRPML_weights_generated.png}
     \caption{Hybrid RP+ML}
   \end{subfigure}
   \caption{Visual comparison of weights by strategy. Each subplot shows a distribution that sums to 100\%; more homogeneous bars indicate better diversification while peaks mark concentration on few assets.}
@@ -791,7 +791,7 @@ This section integrates figures and summary tables already generated and provide
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.9\linewidth]{../../custom_portfolios_sharpe.png}
+  \includegraphics[width=0.9\linewidth]{../../figures/custom_portfolios_sharpe.png}
   \caption{Comparison of Sharpe ratios for various custom portfolios. The higher the bar, the more important the excess return per unit of risk on the 2020--2023 sample.}
   \label{fig:custom_sharpe_external}
 \end{figure}

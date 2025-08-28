@@ -66,7 +66,7 @@
 }
 
 % Chemin des figures
-\graphicspath{{../figures/}{../../}}
+\graphicspath{{../../figures/}{../../}}
 
 \begin{document}
 
@@ -231,7 +231,7 @@ Les \textbf{rendements logarithmiques} d'un prix \(P_t\) sont définis par \(r_t
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.7\linewidth]{../../correlation_heatmap_generated.png}
+  \includegraphics[width=0.7\linewidth]{../../figures/correlation_heatmap_generated.png}
   \caption{Carte de corrélation des rendements journaliers (2020--2023). Chaque case mesure la co\,variation entre deux actifs (1 sur la diagonale). Des valeurs proches des extrêmes signalent une corrélation forte; des valeurs proches de 0 indiquent une bonne possibilité de diversification.}
   \label{fig:corr_external}
 \end{figure}
@@ -292,7 +292,7 @@ def optimize_markowitz(returns, target_return=None):
 \subsection{Résultats}
 \begin{figure}[h]
   \centering
-  \maybeincludegraphics[width=0.85\linewidth]{../figures/markowitz_frontier.png}
+  \maybeincludegraphics[width=0.85\linewidth]{../../figures/markowitz_frontier.png}
   \caption{Frontière efficiente approximative (trait noir) dans le plan volatilité annualisée (axe x) -- rendement annualisé (axe y). Les points bleus sont des portefeuilles aléatoires et l'étoile rouge indique le portefeuille au plus haut ratio de Sharpe; plus haut et à gauche est préférable.}
   \label{fig:markowitz_frontier}
 \end{figure}
@@ -350,7 +350,7 @@ def risk_parity_weights(covariance_matrix):
 \subsection{Résultats}
 \begin{figure}[h]
   \centering
-  \maybeincludegraphics[width=0.75\linewidth]{../figures/risk_parity_weights.png}
+  \maybeincludegraphics[width=0.75\linewidth]{../../figures/risk_parity_weights.png}
   \caption{Pondérations finales d'un portefeuille en parité de risque. Les actifs les moins volatils et faiblement corrélés reçoivent généralement plus de poids; la somme des barres fait 100\%.}
   \label{fig:risk_parity_weights}
 \end{figure}
@@ -404,7 +404,7 @@ def generate_random_portfolios(returns, n_portfolios=10000):
 \end{lstlisting}
 \begin{figure}[h]
   \centering
-  \maybeincludegraphics[width=0.85\linewidth]{../figures/monte_carlo_cloud.png}
+  \maybeincludegraphics[width=0.85\linewidth]{../../figures/monte_carlo_cloud.png}
   \caption{Nuage de 10\,000 portefeuilles tirés aléatoirement. Chaque point représente un couple (volatilité, rendement) annualisé; l'enveloppe supérieure matérialise la frontière efficiente.}
   \label{fig:monte_carlo_cloud}
 \end{figure}
@@ -463,7 +463,7 @@ def black_litterman_optimization(prior_returns, views, confidence):
 \end{lstlisting}
 \begin{figure}[h]
   \centering
-  \maybeincludegraphics[width=0.75\linewidth]{../figures/black_litterman_weights.png}
+  \maybeincludegraphics[width=0.75\linewidth]{../../figures/black_litterman_weights.png}
   \caption{Pondérations résultantes après fusion du prior de marché et des vues de l'investisseur (Black--Litterman). Les écarts au prior reflètent la force et la confiance associées aux vues.}
   \label{fig:bl_weights}
 \end{figure}
@@ -537,14 +537,14 @@ python -m src.ml_training_report --mode auto --start 2020-01-01 --end 2023-12-31
 \noindent Le script génère: \texttt{ml\_accuracy\_evolution.png}, \texttt{ml\_coefficients.png}, \texttt{ml\_training\_metrics.csv}, \texttt{ml\_predictions.csv}, \texttt{ml\_hyperparams.csv} dans \texttt{figures/}.
 \begin{figure}[h]
   \centering
-  \maybeincludegraphics[width=0.75\linewidth]{../figures/ml_accuracy_evolution.png}
+  \maybeincludegraphics[width=0.75\linewidth]{../../figures/ml_accuracy_evolution.png}
   \caption{Évolution chronologique des performances agrégées du prédicteur Ridge: \(R^2\) moyen par date (haut) et accuracy de signe (bas). La ligne pointillée à 50\% représente le hasard.}
   \label{fig:ml_metrics}
 \end{figure}
 
 \begin{figure}[h]
   \centering
-  \maybeincludegraphics[width=0.75\linewidth]{../figures/ml_coefficients.png}
+  \maybeincludegraphics[width=0.75\linewidth]{../../figures/ml_coefficients.png}
   \caption{Coefficients moyens par feature sur la dernière fenêtre d'entraînement (moyennés sur les actifs). Les signes et amplitudes renseignent sur la contribution directionnelle des signaux (et non des poids d'investissement).}
   \label{fig:ml_coeffs}
 \end{figure}
@@ -612,7 +612,7 @@ def hybrid_optimization(risk_parity_weights, ml_scores, alpha=0.2):
 \end{lstlisting}
 \begin{figure}[h]
   \centering
-  \maybeincludegraphics[width=0.75\linewidth]{../figures/hybrid_weights.png}
+  \maybeincludegraphics[width=0.75\linewidth]{../../figures/hybrid_weights.png}
   \caption{Pondérations d'un portefeuille hybride: base Risk Parity ajustée par un tilt proportionnel au score ML. Le tilt augmente ou réduit légèrement le poids selon le signal, tout en conservant la diversification de base.}
   \label{fig:hybrid_weights}
 \end{figure}
@@ -679,7 +679,7 @@ def custom_objective(weights, returns, alpha=0.4, beta=0.3, gamma=0.2, delta=0.1
 \end{lstlisting}
 \begin{figure}[h]
   \centering
-  \maybeincludegraphics[width=0.75\linewidth]{../figures/custom_opt_weights.png}
+  \maybeincludegraphics[width=0.75\linewidth]{../../figures/custom_opt_weights.png}
   \caption{Pondérations optimales lorsqu'on maximise une fonction composite (Sharpe, stabilité, drawdown, turnover). Les actifs surpondérés équilibrent rendement attendu et robustesse opérationnelle.}
   \label{fig:custom_weights}
 \end{figure}
@@ -757,7 +757,7 @@ Cette section intègre les figures et le tableau de synthèse déjà générés 
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.9\linewidth]{../../cumulative_portfolios_generated.png}
+  \includegraphics[width=0.9\linewidth]{../../figures/cumulative_portfolios_generated.png}
   \caption{Croissance cumulée des stratégies entre 2020 et 2023 (base 1). Permet de comparer la trajectoire et les phases de baisse (drawdowns); plus la courbe est haute, meilleure est la performance sur la période.}
   \label{fig:cum_external}
 \end{figure}
@@ -766,26 +766,26 @@ Cette section intègre les figures et le tableau de synthèse déjà générés 
   \centering
   \begin{subfigure}[b]{0.48\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{../../Markowitz_weights_generated.png}
+    \includegraphics[width=\linewidth]{../../figures/Markowitz_weights_generated.png}
     \caption{Markowitz}
   \end{subfigure}
   \hfill
   \begin{subfigure}[b]{0.48\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{../../RiskParity_weights_generated.png}
+    \includegraphics[width=\linewidth]{../../figures/RiskParity_weights_generated.png}
     \caption{Parité de risque}
   \end{subfigure}
   
   \vspace{0.5em}
   \begin{subfigure}[b]{0.48\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{../../MLMarkowitz_weights_generated.png}
+    \includegraphics[width=\linewidth]{../../figures/MLMarkowitz_weights_generated.png}
     \caption{ML-Markowitz}
   \end{subfigure}
   \hfill
   \begin{subfigure}[b]{0.48\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{../../HybridRPML_weights_generated.png}
+    \includegraphics[width=\linewidth]{../../figures/HybridRPML_weights_generated.png}
     \caption{Hybride RP+ML}
   \end{subfigure}
   \caption{Comparaison visuelle des pondérations par stratégie. Chaque sous-graphe montre une répartition dont la somme fait 100\%; des barres plus homogènes traduisent une meilleure diversification tandis que des pics marquent une concentration sur quelques actifs.}
@@ -794,7 +794,7 @@ Cette section intègre les figures et le tableau de synthèse déjà générés 
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.9\linewidth]{../../custom_portfolios_sharpe.png}
+  \includegraphics[width=0.9\linewidth]{../../figures/custom_portfolios_sharpe.png}
   \caption{Comparaison des ratios de Sharpe pour divers portefeuilles personnalisés. Plus la barre est élevée, plus le rendement excédentaire par unité de risque est important sur l'échantillon 2020--2023.}
   \label{fig:custom_sharpe_external}
 \end{figure}
