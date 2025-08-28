@@ -1,5 +1,11 @@
 # SiraEdge - Portfolio Optimization Module
 
+[![GitHub Release](https://img.shields.io/github/v/release/IsmailMoudden/siraedge-portfolio-optimization?style=for-the-badge)](https://github.com/IsmailMoudden/siraedge-portfolio-optimization/releases)
+[![GitHub Stars](https://img.shields.io/github/stars/IsmailMoudden/siraedge-portfolio-optimization?style=for-the-badge)](https://github.com/IsmailMoudden/siraedge-portfolio-optimization/stargazers)
+[![GitHub License](https://img.shields.io/github/license/IsmailMoudden/siraedge-portfolio-optimization?style=for-the-badge)](https://github.com/IsmailMoudden/siraedge-portfolio-optimization/blob/main/LICENSE)
+[![Python Version](https://img.shields.io/badge/python-3.8%2B-blue?style=for-the-badge)](https://www.python.org/)
+[![Test Status](https://img.shields.io/github/actions/workflow/status/IsmailMoudden/siraedge-portfolio-optimization/test.yml?branch=main&style=for-the-badge&label=tests)](https://github.com/IsmailMoudden/siraedge-portfolio-optimization/actions)
+
 > 🇫🇷 Ce README est aussi disponible en [français](README.fr.md).
 
 ## Overview
@@ -59,19 +65,19 @@ This module implements and analyzes **7 portfolio optimization models**:
 
 ```
 SiraEdge_Optimisation/
-├── src/                          # Python source code
-│   ├── data_utils.py            # Data utilities and indicators
-│   ├── markowitz.py             # Markowitz optimization
-│   ├── risk_parity.py           # Risk parity
-│   ├── monte_carlo.py           # Monte Carlo simulation
-│   ├── black_litterman.py       # Black-Litterman model
-│   ├── ml_predictor.py          # ML predictor
-│   ├── hybrid_model.py          # Hybrid model
-│   ├── custom_metrics_opt.py    # Custom metrics
-│   ├── metrics_utils.py         # Financial metrics calculations
-│   ├── walkforward_backtest.py  # Walk-forward backtesting
-│   └── hyperparams.py           # Centralized hyperparameters
-├── figures/                      # Charts and visualizations
+├── src/                          # Code source Python
+│   ├── data_utils.py            # Utilitaires de données et indicateurs
+│   ├── markowitz.py             # Optimisation Markowitz
+│   ├── risk_parity.py           # Parité de risque
+│   ├── monte_carlo.py           # Simulation Monte Carlo
+│   ├── black_litterman.py       # Modèle Black-Litterman
+│   ├── ml_predictor.py          # Prédicteur ML
+│   ├── hybrid_model.py          # Modèle hybride
+│   ├── custom_metrics_opt.py    # Métriques personnalisées
+│   ├── metrics_utils.py         # Calculs de métriques financières
+│   ├── walkforward_backtest.py  # Backtest walk-forward
+│   └── hyperparams.py           # Hyperparamètres centralisés
+├── figures/                      # Graphiques et visualisations
 │   ├── markowitz_frontier.png
 │   ├── risk_parity_weights.png
 │   ├── monte_carlo_cloud.png
@@ -79,21 +85,13 @@ SiraEdge_Optimisation/
 │   ├── ml_coefficients.png
 │   ├── hybrid_weights.png
 │   └── custom_opt_weights.png
-├── rapport/                      # LaTeX report sources
-│   ├── sources/                  # LaTeX source files
-│   │   ├── rapport_siraedge_fr.tex
-│   │   ├── rapport_siraedge_en.tex
-│   │   ├── portfolio_summary_included.tex
-│   │   └── walkforward_results_simulated.tex
-│   ├── pdf/                      # Compiled PDF reports
-│   │   ├── rapport_siraedge_fr.pdf
-│   │   └── rapport_siraedge_en.pdf
-│   ├── tables/                   # Tabular data
-│   ├── compile_reports.sh        # Automated compilation script
-│   └── README.md                 # Report organization guide
-├── README.md                     # This file
-├── requirements.txt              # Python dependencies
-└── make_report.sh               # Automated generation script
+├── rapport/                      # Sources LaTeX du rapport
+│   ├── rapport_siraedge_optimisation.tex
+│   ├── portfolio_summary_included.tex
+│   └── walkforward_results_simulated.tex
+├── README.md                     # Ce fichier
+├── requirements.txt              # Dépendances Python
+└── make_report.sh               # Script de génération automatique
 ```
 ## 🛠️ Installation & Setup
 
@@ -105,8 +103,8 @@ SiraEdge_Optimisation/
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/SiraEdge/portfolio-optimization.git
-cd portfolio-optimization
+git clone https://github.com/IsmailMoudden/siraedge-portfolio-optimization.git
+cd siraedge-portfolio-optimization
 ```
 
 2. **Install dependencies**
@@ -142,13 +140,8 @@ chmod +x make_report.sh
 ./make_report.sh
 
 # Or manual compilation
-cd rapport/sources
-tectonic rapport_siraedge_fr.tex
-tectonic rapport_siraedge_en.tex
-
-# Or use the automated compilation script
 cd rapport
-./compile_reports.sh
+tectonic rapport_siraedge_optimisation.tex
 ```
 
 ### 3. **Interactive Usage**
@@ -235,11 +228,7 @@ This project is designed to be **educational** and **accessible**:
 ## 📚 Documentation
 
 ### LaTeX Report
-The full reports are available in both French and English:
-- **French Report**: `rapport/pdf/rapport_siraedge_fr.pdf`
-- **English Report**: `rapport/pdf/rapport_siraedge_en.pdf`
-
-Both reports include:
+The full report (`rapport_siraedge_optimisation.pdf`) includes:
 - Detailed theoretical explanations
 - Mathematical formulations
 - Comparative analyses
@@ -269,8 +258,8 @@ This project is licensed under the MIT License. See the [`LICENSE`](LICENSE) fil
 
 ## 📞 Contact
 
-- **SiraEdge Team:** [siraedge.service@gmail.com](mailto:siraedge.service@gmail.com)
-- **GitHub Repository:** https://github.com/SiraEdge/portfolio-optimization
-- **SiraEdge Platform:** https://siraedge.com
+- **Author:** [Ismail Moudden](https://github.com/IsmailMoudden)
+- **GitHub Repository:** https://github.com/IsmailMoudden/siraedge-portfolio-optimization
+- **Issues & Support:** https://github.com/IsmailMoudden/siraedge-portfolio-optimization/issues
 
 **SiraEdge** – Making finance accessible, transparent, and innovative for everyone. 🚀
