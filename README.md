@@ -324,7 +324,7 @@ This project is licensed under the MIT License. See the [`LICENSE`](LICENSE) fil
 ## 📞 Contact & Support
 
 - **Author:** [Ismail Moudden](https://github.com/IsmailMoudden)
-- **GitHub Repository:** https://github.com/IsmailMoudden/siraedge-module
+- **GitHub Repository:** https://github.com/IsmailMoudden/Portfolio-Optimization-Module-SiraEdge
 - **Issues & Support:** https://github.com/IsmailMoudden/siraedge-module/issues
 - **Documentation:** [Contributing Guide](CONTRIBUTING.md) | [Changelog](CHANGELOG.md)
 
