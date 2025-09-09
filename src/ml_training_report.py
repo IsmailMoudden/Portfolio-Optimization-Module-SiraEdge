@@ -10,7 +10,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import Pipeline
 from sklearn.metrics import r2_score, mean_absolute_error
 
-from data_utils import (
+from .data_utils import (
     download_prices,
     compute_indicators,
     align_features_and_targets,

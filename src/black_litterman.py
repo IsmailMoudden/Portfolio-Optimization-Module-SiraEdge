@@ -2,7 +2,7 @@ import os
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-from data_utils import download_prices, ensure_figures_dir, DEFAULT_TICKERS
+from .data_utils import download_prices, ensure_figures_dir, DEFAULT_TICKERS
 
 
 def run_black_litterman(tickers=None, start="2020-01-01", end="2023-12-31") -> pd.Series:

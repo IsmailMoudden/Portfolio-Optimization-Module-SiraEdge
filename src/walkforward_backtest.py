@@ -4,8 +4,8 @@ import pandas as pd
 from datetime import datetime
 from typing import Dict, Callable, Tuple
 
-from data_utils import download_prices, ensure_figures_dir, DEFAULT_TICKERS
-from metrics_utils import sharpe_ratio, calmar_ratio, sortino_ratio, weight_stability, turnover
+from .data_utils import download_prices, ensure_figures_dir, DEFAULT_TICKERS
+from .metrics_utils import sharpe_ratio, calmar_ratio, sortino_ratio, weight_stability, turnover
 
 
 def compute_weights_markowitz(prices: pd.DataFrame) -> np.ndarray:

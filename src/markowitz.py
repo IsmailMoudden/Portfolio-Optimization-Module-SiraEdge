@@ -2,7 +2,7 @@ import os
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-from data_utils import download_prices, ensure_figures_dir, DEFAULT_TICKERS
+from .data_utils import download_prices, ensure_figures_dir, DEFAULT_TICKERS
 
 
 def random_portfolios(mu: np.ndarray, cov: np.ndarray, n: int = 20000, seed: int = 42):
