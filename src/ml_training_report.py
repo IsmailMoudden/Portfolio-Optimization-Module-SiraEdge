@@ -10,13 +10,22 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import Pipeline
 from sklearn.metrics import r2_score, mean_absolute_error
 
-from .data_utils import (
-    download_prices,
-    compute_indicators,
-    align_features_and_targets,
-    ensure_figures_dir,
-    DEFAULT_TICKERS,
-)
+try:
+    from .data_utils import (
+        download_prices,
+        compute_indicators,
+        align_features_and_targets,
+        ensure_figures_dir,
+        DEFAULT_TICKERS,
+    )
+except ImportError:
+    from data_utils import (
+        download_prices,
+        compute_indicators,
+        align_features_and_targets,
+        ensure_figures_dir,
+        DEFAULT_TICKERS,
+    )
 
 
 def compute_sign_accuracy(y_true: np.ndarray, y_pred: np.ndarray) -> float:

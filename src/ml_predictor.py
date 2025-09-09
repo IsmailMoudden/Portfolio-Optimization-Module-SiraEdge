@@ -7,7 +7,10 @@ from sklearn.linear_model import Ridge
 from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import Pipeline
 from sklearn.model_selection import TimeSeriesSplit
-from .data_utils import download_prices, compute_indicators, ensure_figures_dir, DEFAULT_TICKERS
+try:
+    from .data_utils import download_prices, compute_indicators, ensure_figures_dir, DEFAULT_TICKERS
+except ImportError:
+    from data_utils import download_prices, compute_indicators, ensure_figures_dir, DEFAULT_TICKERS
 
 
 def prepare_ml_dataset(start="2020-01-01", end="2023-12-31", tickers=None) -> Tuple[pd.DataFrame, pd.Series, pd.Series]:

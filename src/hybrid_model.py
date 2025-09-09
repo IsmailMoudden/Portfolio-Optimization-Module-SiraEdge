@@ -2,8 +2,12 @@ import os
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-from .data_utils import download_prices, compute_indicators, ensure_figures_dir, DEFAULT_TICKERS
-from .risk_parity import risk_parity_weights
+try:
+    from .data_utils import download_prices, compute_indicators, ensure_figures_dir, DEFAULT_TICKERS
+    from .risk_parity import risk_parity_weights
+except ImportError:
+    from data_utils import download_prices, compute_indicators, ensure_figures_dir, DEFAULT_TICKERS
+    from risk_parity import risk_parity_weights
 from sklearn.linear_model import Ridge
 from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import Pipeline

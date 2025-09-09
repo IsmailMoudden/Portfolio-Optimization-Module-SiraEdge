@@ -2,7 +2,10 @@ import os
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-from .data_utils import download_prices, ensure_figures_dir, DEFAULT_TICKERS
+try:
+    from .data_utils import download_prices, ensure_figures_dir, DEFAULT_TICKERS
+except ImportError:
+    from data_utils import download_prices, ensure_figures_dir, DEFAULT_TICKERS
 
 
 def simulate_portfolios(returns: pd.DataFrame, n_portfolios: int = 10000, seed: int = 42):
