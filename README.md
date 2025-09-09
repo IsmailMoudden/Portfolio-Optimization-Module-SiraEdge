@@ -2,7 +2,7 @@
 
 [![GitHub Release](https://img.shields.io/github/v/release/IsmailMoudden/Portfolio-Optimization-Module-SiraEdge?style=for-the-badge)](https://github.com/IsmailMoudden/Portfolio-Optimization-Module-SiraEdge/releases)
 [![GitHub Stars](https://img.shields.io/github/stars/IsmailMoudden/Portfolio-Optimization-Module-SiraEdge?style=for-the-badge)](https://github.com/IsmailMoudden/Portfolio-Optimization-Module-SiraEdge/stargazers)
-[![GitHub License](https://img.shields.io/github/license/IsmailMoudden/Portfolio-Optimization-Module-SiraEdge?style=for-the-badge)](https://github.com/IsmailMoudden/Portfolio-Optimization-Module-SiraEdge/blob/main/LICENSE)
+[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg?style=for-the-badge)](https://creativecommons.org/licenses/by-nc/4.0/)
 [![Python Version](https://img.shields.io/badge/python-3.8%2B-blue?style=for-the-badge)](https://www.python.org/)
 [![Test Status](https://img.shields.io/github/actions/workflow/status/IsmailMoudden/Portfolio-Optimization-Module-SiraEdge/test.yml?branch=main&style=for-the-badge&label=tests)](https://github.com/IsmailMoudden/Portfolio-Optimization-Module-SiraEdge/actions)
 
