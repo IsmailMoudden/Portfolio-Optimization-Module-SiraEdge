@@ -1,10 +1,10 @@
 # SiraEdge - Portfolio Optimization Module
 
-[![GitHub Release](https://img.shields.io/github/v/release/IsmailMoudden/siraedge-module?style=for-the-badge)](https://github.com/IsmailMoudden/siraedge-module/releases)
-[![GitHub Stars](https://img.shields.io/github/stars/IsmailMoudden/siraedge-module?style=for-the-badge)](https://github.com/IsmailMoudden/siraedge-module/stargazers)
-[![GitHub License](https://img.shields.io/github/license/IsmailMoudden/siraedge-module?style=for-the-badge)](https://github.com/IsmailMoudden/siraedge-module/blob/main/LICENSE)
+[![GitHub Release](https://img.shields.io/github/v/release/IsmailMoudden/Portfolio-Optimization-Module-SiraEdge?style=for-the-badge)](https://github.com/IsmailMoudden/Portfolio-Optimization-Module-SiraEdge/releases)
+[![GitHub Stars](https://img.shields.io/github/stars/IsmailMoudden/Portfolio-Optimization-Module-SiraEdge?style=for-the-badge)](https://github.com/IsmailMoudden/Portfolio-Optimization-Module-SiraEdge/stargazers)
+[![GitHub License](https://img.shields.io/github/license/IsmailMoudden/Portfolio-Optimization-Module-SiraEdge?style=for-the-badge)](https://github.com/IsmailMoudden/Portfolio-Optimization-Module-SiraEdge/blob/main/LICENSE)
 [![Python Version](https://img.shields.io/badge/python-3.8%2B-blue?style=for-the-badge)](https://www.python.org/)
-[![Test Status](https://img.shields.io/github/actions/workflow/status/IsmailMoudden/siraedge-module/test.yml?branch=main&style=for-the-badge&label=tests)](https://github.com/IsmailMoudden/siraedge-module/actions)
+[![Test Status](https://img.shields.io/github/actions/workflow/status/IsmailMoudden/Portfolio-Optimization-Module-SiraEdge/test.yml?branch=main&style=for-the-badge&label=tests)](https://github.com/IsmailMoudden/Portfolio-Optimization-Module-SiraEdge/actions)
 
 > 🇫🇷 Ce README est aussi disponible en [français](README.fr.md).
 
@@ -105,8 +105,8 @@ SiraEdge_Optimisation/
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/IsmailMoudden/siraedge-module.git
-cd siraedge-module
+git clone https://github.com/IsmailMoudden/Portfolio-Optimization-Module-SiraEdge.git
+cd Portfolio-Optimization-Module-SiraEdge
 ```
 
 2. **Install dependencies**
@@ -324,8 +324,8 @@ This project is licensed under the MIT License. See the [`LICENSE`](LICENSE) fil
 ## 📞 Contact & Support
 
 - **Author:** [Ismail Moudden](https://github.com/IsmailMoudden)
-- **GitHub Repository:** https://github.com/IsmailMoudden/siraedge-module
-- **Issues & Support:** https://github.com/IsmailMoudden/siraedge-module/issues
+- **GitHub Repository:** https://github.com/IsmailMoudden/Portfolio-Optimization-Module-SiraEdge
+- **Issues & Support:** https://github.com/IsmailMoudden/Portfolio-Optimization-Module-SiraEdge/issues
 - **Documentation:** [Contributing Guide](CONTRIBUTING.md) | [Changelog](CHANGELOG.md)
 
 ## 🤝 Contributing

@@ -105,8 +105,8 @@ SiraEdge_Optimisation/
 
 1. **Cloner le repository**
 ```bash
-git clone https://github.com/SiraEdge/portfolio-optimization.git
-cd portfolio-optimization
+git clone https://github.com/IsmailMoudden/Portfolio-Optimization-Module-SiraEdge.git
+cd Portfolio-Optimization-Module-SiraEdge
 ```
 
 2. **Installer les dépendances**
@@ -271,7 +271,7 @@ Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
 ## 📞 Contact
 
 - **Équipe SiraEdge** : [siraedge.service@gmail.com](mailto:siraedge.service@gmail.com)
-- **Repository GitHub** : [https://github.com/SiraEdge/portfolio-optimization](https://github.com/SiraEdge/portfolio-optimization)
+- **Repository GitHub** : [https://github.com/IsmailMoudden/Portfolio-Optimization-Module-SiraEdge](https://github.com/IsmailMoudden/Portfolio-Optimization-Module-SiraEdge)
 - **Plateforme SiraEdge** : [https://siraedge.com](https://siraedge.com)
 
 
