@@ -1,0 +1,46 @@
+name: Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.8, 3.9, "3.10", "3.11"]
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Test imports
+      run: |
+        python -c "import pandas, numpy, matplotlib, yfinance, scipy, sklearn; print('All imports successful!')"
+    
+    - name: Test data utilities
+      run: |
+        python -c "from src.data_utils import download_prices; print('Data utils import successful!')"
+    
+    - name: Test optimization modules
+      run: |
+        python -c "from src.markowitz import markowitz_weights; print('Markowitz module import successful!')"
+        python -c "from src.risk_parity import risk_parity_weights; print('Risk parity module import successful!')"
+        python -c "from src.monte_carlo import monte_carlo_simulation; print('Monte Carlo module import successful!')"
+        python -c "from src.black_litterman import black_litterman_weights; print('Black-Litterman module import successful!')"
+        python -c "from src.ml_predictor import ml_predictor; print('ML predictor module import successful!')"
+        python -c "from src.hybrid_model import hybrid_weights; print('Hybrid model module import successful!')"
+        python -c "from src.custom_metrics_opt import custom_metrics_weights; print('Custom metrics module import successful!')"
+        python -c "from src.walkforward_backtest import walkforward_backtest; print('Walkforward backtest module import successful!')"
